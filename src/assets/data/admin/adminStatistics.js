@@ -1,6 +1,7 @@
 import stocks from '../../icons/admin/stockStat.svg';
 import investors from '../../icons/admin/investorStat.svg';
 import investements from '../../icons/admin/investements.svg';
+import companies from '../../icons/admin/companies.svg';
 
 const data = {
     'values': [{
@@ -18,6 +19,12 @@ const data = {
     {
         'title': 'Total Investments',
         'icon': investements,
+        'number': '3000',
+        'link': '/admin/stocks'
+    },
+    {    
+        'title': 'Total Companies',
+        'icon': companies,
         'number': '3000',
         'link': '/admin/stocks'
     }]
