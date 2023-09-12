@@ -1,8 +1,14 @@
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Admin from "./pages/admin/AdminPage";
 
 function App() {
   return (
-    <div className=" bg-black h-16 w-full">
-      haea
+    <div className="">
+      <BrowserRouter>
+      <Routes>
+        <Route path="/admin/*" element={<Admin/>} />
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
