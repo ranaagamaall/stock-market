@@ -9,7 +9,7 @@ module.exports = {
       colors: {
           'text': '#FFFFFF',
           'primary': '#191d30',
-          'secondary': "#30375C",
+          'secondary': "#28304f",
           'accent': '#F7C316',
           'success': '#49E8A1',
           'fail': '#F94261',
