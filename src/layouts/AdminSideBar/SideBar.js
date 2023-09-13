@@ -9,7 +9,7 @@ function SideBar(props) {
   return (
     <div className="flex flex-col w-full h-full min-h-screen py-12 shadow-lg bg-secondary">
       <div className="min-w-[50%] flex items-center gap-4 mx-auto">
-        <NavLink to="/">
+        <NavLink to="/admin/">
           <h2 className="font-main font-bold text-[2rem] leading-8 flex gap-5 items-center ">
             <img src={brand} alt="brand" className="w-[2.5rem]"
             />
