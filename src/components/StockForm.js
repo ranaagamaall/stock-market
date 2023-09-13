@@ -11,9 +11,10 @@ function StockForm() {
     company: Yup.string()
       .required("company name is required"),
     price: Yup.string()
-      .min(8, "password must be at least 8 characters")
+      .matches("[0-9]", "price must be a poitive number")
       .required("price is required"),
     shares: Yup.string()
+      .matches("[0-9]", "shares must be a positive number")
       .required("number of shares is required")
   });
 

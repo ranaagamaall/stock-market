@@ -25,7 +25,7 @@ function Investors() {
                 {
                   data.columns.map((column, index) =>
 
-                    <th key={index} className="px-6 py-3 font-semibold font-main text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-text ">
+                    <th key={index} className="px-6 py-3 font-semibold font-main text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-accent`` ">
                       {column}
                     </th>
                   )
