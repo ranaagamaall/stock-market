@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import data from '../../../assets/data/admin/adminInvestors.js';
+import Table from "../../../components/Table.js";
 
 
 function Investors() {
@@ -14,36 +15,22 @@ function Investors() {
   }
 
   return (
-    <div className="relative flex flex-col w-full min-w-0 mb-0 break-words border-0 border-transparent border-solid shadow-xl bg-secondary rounded-2xl bg-clip-border">
-      <div className="relative flex flex-wrap items-stretch w-1/2 mx-auto mt-2">
-        <input
-          type="search"
-          className="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-text bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-text outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-text focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none"
-          placeholder="Search"
-          onChange={(e) => { setUsers(data.users.filter(user => user.name.toLowerCase().includes(e.target.value.toLowerCase()))) }}
-        />
+    <>
+      <div className="relative flex flex-col w-full min-w-0 mb-0 break-words border-0 border-transparent border-solid shadow-xl bg-secondary rounded-2xl bg-clip-border">
+        <div className="relative flex flex-wrap items-stretch w-1/2 mx-auto mt-2">
+          <input
+            type="search"
+            className="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-text bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-text outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-text focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none"
+            placeholder="Search"
+            onChange={(e) => { setUsers(data.users.filter(user => user.name.toLowerCase().includes(e.target.value.toLowerCase()))) }}
+          />
 
-      </div>
-      <div className="flex-auto h-full px-0 pt-0 pb-2">
-        <div className="p-0 overflow-x-auto h-[80vh]">
-          <table className="items-center w-full mb-0 align-top border-text pb text-text">
-            <thead className="align-bottom">
-              <tr>
-                {
-                  data.columns.map((column, index) =>
-
-                    <th key={index} className="px-6 py-3 font-semibold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none font-main text-xxs border-b-solid tracking-none whitespace-nowrap text-text ">
-                      {column}
-                    </th>
-                  )
-                }
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user, index) =>
-
-                <tr key={index}>
-
+        </div>
+        <div className="flex-auto h-full px-0 pt-0 pb-2">
+          <div className="p-0 overflow-x-auto h-[80vh]">
+            <Table columns={data.columns} rows={users.map((user) => {
+              return (
+                <>
                   <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <div className="flex px-2 py-1">
                       <div>
@@ -70,16 +57,14 @@ function Investors() {
                       className="px-4 py-2 font-semibold leading-tight rounded-lg text-s bg-success text-primary font-main">view</button>
 
                   </td>
-                </tr>
+                </>
               )
-              }
-            </tbody>
-
-          </table>
+            })} />
+          </div>
         </div>
       </div>
-      <dialog ref={dialog} className="ml-[20%] w-4/5 max-h-full bg-transparent text-text">
-        <div className="w-4/5 m-auto bg-primary rounded-2xl">
+      <dialog ref={dialog} className="w-full h-full ml-[10%] my-auto bg-transparent text-text ">
+        <div className="w-3/5 m-auto bg-primary rounded-2xl">
           <div className="flex items-start justify-between p-4 border-b rounded-t">
             <div className="flex px-2 py-1">
               <div>
@@ -97,14 +82,25 @@ function Investors() {
           </div>
           <div className="flex flex-col p-6">
             {
-              userToInspect.investments.map((investment, index) =>
-                <div key={index} className="flex justify-between">
-                  <p className="text-sm font-medium ">{investment.stock}</p>
-                  <p className="text-sm font-medium ">{investment.amount}</p>
-                  <p className="text-sm font-medium ">{investment.price}</p>
-                  <p className="text-sm font-medium ">{investment.date}</p>
-                </div>
-              )
+              userToInspect.investments &&
+              <Table columns={['Stock', 'Amount', 'Price', 'Date']} rows={userToInspect.investments.map((investment) => {
+                return (
+                  <>
+                    <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                      <p className="mb-0 font-medium leading-tight text-center text-s font-main opacity-80">{investment.stock}</p>
+                    </td>
+                    <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                      <p className="mb-0 font-medium leading-tight text-center text-s font-main opacity-80">{investment.amount}</p>
+                    </td>
+                    <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                      <p className="mb-0 font-medium leading-tight text-center text-s font-main opacity-80">{investment.price}</p>
+                    </td>
+                    <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                      <p className="mb-0 font-medium leading-tight text-center text-s font-main opacity-80">{investment.date}</p>
+                    </td>
+                  </>
+                )
+              })} />
             }
           </div>
           <div className="flex items-center justify-end p-6 border-t border-gray-200 rounded-b dark:border-gray-600">
@@ -116,8 +112,8 @@ function Investors() {
           </div>
         </div>
       </dialog>
-    </div>
 
+    </>
   );
 }
 
