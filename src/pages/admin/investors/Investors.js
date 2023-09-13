@@ -18,7 +18,7 @@ function Investors() {
 
       </div>
       <div className="flex-auto h-full px-0 pt-0 pb-2">
-        <div className="p-0 overflow-x-auto max-h-[80vh]">
+        <div className="p-0 overflow-x-auto h-[80vh]">
           <table className="items-center w-full mb-0 align-top border-gray-200 pb text-slate-500">
             <thead className="align-bottom">
               <tr>
