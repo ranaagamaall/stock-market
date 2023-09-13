@@ -9,7 +9,7 @@ const getPercentage = (arr) => ((arr[arr.length - 1] - getAverage(arr)) * 100 / 
 function Dashboard() {
     return (
         <>
-            <div className="grid grid-cols-12 gap-6 h-fit">
+            <div className="grid grid-cols-12 gap-8 h-fit">
                 {adminStatistics.values.map((stat, index) => (
 
                     <a
@@ -37,7 +37,7 @@ function Dashboard() {
             </div>
             {
                 adminStatistics.chartData.map((chart, index) => (
-                    <div className="flex items-center w-full h-56 justify-evenly" key={index}>
+                    <div className="flex flex-wrap items-center w-full h-56 justify-evenly" key={index}>
                         <h2 className="text-2xl font-bold text-center capitalize font-main text-text w-min">{chart.title}</h2>
                         <Chart type={chart.type} width="60%" data={chart.data} xKey="date" yKey="number" />
                     </div>
