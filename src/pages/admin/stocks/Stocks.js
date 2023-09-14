@@ -11,7 +11,7 @@ function Stocks() {
         <p className="text-xl capitalize text-text font-main font-regular">
           for new companies
         </p>
-        <img className="w-3/5 mx-auto rounded-3xl" src="https://img.freepik.com/free-photo/stock-market-chart-technology-blue-background_53876-124650.jpg?w=1060&t=st=1694567619~exp=1694568219~hmac=9ce454bf5dc5931019b322e2e30f44530ce14bd69ec066465c9d92927b806778" />
+        {/* <img className="w-3/5 mx-auto rounded-3xl" src="https://img.freepik.com/free-photo/stock-market-chart-technology-blue-background_53876-124650.jpg?w=1060&t=st=1694567619~exp=1694568219~hmac=9ce454bf5dc5931019b322e2e30f44530ce14bd69ec066465c9d92927b806778" /> */}
       </div>
       <div className="px-12 basis-[60%] min-w-[20rem]">
         <StockForm />

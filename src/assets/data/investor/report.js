@@ -1,5 +1,6 @@
+
 const data = [{
-    'title': 'Total Investors',
+    'title': 'Total Income',
     'icon': "",
     'number': [
         1000,
@@ -16,7 +17,7 @@ const data = [{
     'link': '/admin/',
 },
 {
-    'title': 'Total Stocks',
+    'title': 'Total Balance',
     'icon': "",
     'number': [
         1000,
@@ -33,7 +34,7 @@ const data = [{
     'link': '/admin/investors',
 },
 {
-    'title': 'Total Companies',
+    'title': 'Total Spending',
     'icon': "",
     'number': [
         1000,
