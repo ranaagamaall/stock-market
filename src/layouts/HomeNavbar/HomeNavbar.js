@@ -36,8 +36,11 @@ function HomeNavbar(props) {
             ))}
           </ul>
 
-          <div className="flex items-center gap-4">
-            <h4 className="px-3 text-lg font-medium bg-success rounded-3xl text-primary">
+          <div className="flex items-center gap-4 text-primary">
+            <button className="px-3 text-lg font-medium capitalize bg-accent rounded-3xl">
+              + Add funds
+            </button>
+            <h4 className="px-3 text-lg font-medium bg-success rounded-3xl ">
               $ 17000
             </h4>
             <img
