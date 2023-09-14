@@ -1,15 +1,15 @@
 const data = [
     {
         title: "Dashboard",
-        link: "/dashboard",
+        link: "dashboard",
     },
     {
         title: "transactions",
-        link: "/transactions",
+        link: "transactions",
     },
     {
         title: "wallet",
-        link: "/wallet",
+        link: "wallet",
     }
 ]
 
