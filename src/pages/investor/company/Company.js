@@ -1,9 +1,44 @@
 import Chart from "../../../components/Chart";
 
 import adminStatistics from "../../../assets/data/admin/adminStatistics"
+import { useEffect, useRef, useState } from "react";
 
 function Company() {
-    const chart = adminStatistics.chartData[1];
+    const months = [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ]
+    const [chart, setChart] = useState(adminStatistics.chartData[1])
+    const [selectOptions, setSelectOptions] = useState([...months.keys()])
+    const fromRef = useRef(null);
+    const toRef = useRef(null);
+
+
+    function fromOnChange() {
+        const fromNumber = parseInt(fromRef.current.value)
+        let toNumber = parseInt(toRef.current.value)
+
+        const newChart = { ...adminStatistics.chartData[1] }
+        setSelectOptions([...months.keys()].slice(fromNumber + 1))
+
+        if (fromNumber > toNumber) {
+            toRef.current.value = fromNumber + 1
+            toNumber = parseInt(toRef.current.value)
+        }
+
+        newChart.data = newChart.data.slice(fromNumber, toNumber + 1)
+
+        setChart(newChart)
+    }
+
+    function toOnChange() {
+        const fromNumber = parseInt(fromRef.current.value)
+        const toNumber = parseInt(toRef.current.value)
+        const newChart = { ...adminStatistics.chartData[1] }
+        newChart.data = newChart.data.slice(fromNumber, toNumber + 1)
+        setChart(newChart)
+    }
+
+
     return (
         <div>
             <div
@@ -12,7 +47,20 @@ function Company() {
                 <h2 className="text-3xl font-bold text-center capitalize font-main text-text w-min">
                     Microsoft
                 </h2>
-
+                <select ref={fromRef} onChange={fromOnChange} className=" [&>*]:text-primary   rounded-lg border outline-none bg-transparent px-3 py-1 ">
+                    {
+                        [...Array(11).keys()].map((option, index) => (
+                            <option key={index} value={option}>{months[option]}</option>
+                        ))
+                    }
+                </select>
+                <select ref={toRef} onChange={toOnChange} className=" [&>*]:text-primary   rounded-lg border outline-none bg-transparent px-3 py-1 ">
+                    {
+                        selectOptions.map((option, index) => (
+                            <option key={index} value={option}>{months[option]}</option>
+                        ))
+                    }
+                </select>
                 <Chart
                     type={chart.type}
                     width="70%"
