@@ -91,7 +91,13 @@ function Company() {
                     <p className="flex-1 px-4 rounded-lg h-fit bg-success w-max">100%</p>
                 </div>
             </div>
-        </div>
+
+            <div className="flex py-4 text-primary">
+                <button className="p-3 mx-auto text-lg font-medium capitalize bg-accent rounded-3xl">
+                    invest now
+                </button>
+            </div>
+        </div >
     )
 }
 
