@@ -2,6 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import HomeNavbar from "../../layouts/HomeNavbar/HomeNavbar";
 import Home from "./home/Home";
+import Company from "./company/Company";
 
 function Investor() {
   return (
@@ -11,6 +12,7 @@ function Investor() {
         <main className="flex flex-col w-full gap-4 p-8 justify-evenly">
           <Routes>
             <Route path="" element={<Home />} />
+            <Route path="/company/:id" element={<Company />} />
           </Routes>
         </main>
       </div>
