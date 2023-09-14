@@ -7,17 +7,18 @@ const data = [
   {
     title: "Dashboard",
     icon: home,
-    link: "/admin/",
+    link: "/admin",
   },
   {
     title: "Investors",
     icon: investors,
     link: "/admin/investors",
   },
-  { title: "Stocks",
-    icon: stocks, 
-    link: "/admin/stocks" 
-},
+  {
+    title: "Stocks",
+    icon: stocks,
+    link: "/admin/stocks"
+  },
 ];
 
 export default data;

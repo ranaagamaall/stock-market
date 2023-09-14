@@ -9,7 +9,7 @@ function SideBar(props) {
   return (
     <div className="flex flex-col w-full h-full min-h-screen py-12 shadow-lg bg-secondary">
       <div className="min-w-[50%] flex items-center gap-4 mx-auto">
-        <NavLink to="/admin/">
+        <NavLink to="/admin">
           <h2 className="font-main font-bold text-[2rem] leading-8 flex gap-5 items-center ">
             <img src={brand} alt="brand" className="w-[2.5rem]"
             />
@@ -22,6 +22,7 @@ function SideBar(props) {
           {data.map((item, index) => (
             <li key={index}>
               <NavLink
+                end
                 to={item.link}
                 className={({ isActive }) => ["text-[1.3rem] font-main relative cursor-pointer flex gap-4 items-center my-6 ",
                   isActive

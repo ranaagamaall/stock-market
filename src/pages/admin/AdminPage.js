@@ -23,7 +23,7 @@ function Admin() {
         </div>
         <main className="w-[80%] flex flex-col justify-evenly p-8 gap-4">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="" element={<Dashboard />} />
             <Route path="/investors" element={<Investors />} />
             <Route path="/stocks" element={<Stocks />} />
           </Routes>

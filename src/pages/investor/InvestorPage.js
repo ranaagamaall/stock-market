@@ -10,7 +10,7 @@ function Investor() {
         <HomeNavbar />
         <main className="w-[80%] flex flex-col justify-evenly p-8 gap-4">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="" element={<Home />} />
           </Routes>
         </main>
       </div>
