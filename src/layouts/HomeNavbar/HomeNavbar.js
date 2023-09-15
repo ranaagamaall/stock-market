@@ -20,13 +20,13 @@ function HomeNavbar(props) {
   }
 
   return (
-    <div className="pb-4 shadow-lg bg-primary px-14 font-main ">
+    <div className="px-4 pb-4 shadow-lg bg-primary md:px-14 font-main ">
       <div className="flex w-full ">
         <div className="flex items-center justify-between w-full ">
           <NavLink to="/">
             <h2 className=" font-bold text-[1.5rem] leading-8 flex gap-3 items-center ">
               <img src={brand} alt="brand" className="w-[2rem]" />
-              Stocker
+              <span className="hidden md:block">Stocker</span>
             </h2>
           </NavLink>
           <ul className="flex items-center gap-4">
@@ -49,23 +49,23 @@ function HomeNavbar(props) {
             ))}
           </ul>
 
-          <div className="flex items-center gap-4 text-primary">
+          <div className="grid items-center gap-4 py-4 md:py-0 md:flex text-primary">
             <button onClick={() => addFundsRef.current.showModal()}
               className="px-3 text-lg font-medium capitalize bg-accent rounded-3xl">
               + Add funds
             </button>
-            <h4 className="px-3 text-lg font-medium bg-success rounded-3xl ">
+            <h4 className="px-3 text-lg font-medium text-center bg-success rounded-3xl ">
               $ {props.user.currentBalance}
             </h4>
             <img
               src={pic}
               alt="profilepic"
-              className="rounded-full w-[2.5rem] border-2 border-success "
+              className="hidden md:block rounded-full w-[2.5rem] border-2 border-success "
             />
           </div>
         </div>
       </div>
-      <Dailog ref={addFundsRef} name="Recharge your wallet" className="mt-[10%] w-1/2" onSubmit={handleAddFunds} submitText="Recharge">
+      <Dailog ref={addFundsRef} name="Recharge your wallet" className="mt-[10%] w-[90%] md:w-1/2" onSubmit={handleAddFunds} submitText="Recharge">
         <input type="number" pattern="[0-9]" ref={rechargeMoneyRef} onKeyUp={(e) => { if (e.code === 'Enter') handleAddFunds() }} className="w-full p-2 border-2 rounded-lg outline-none border-primary text-primary invalid:border-fail " placeholder="Enter amount" />
         {/* {error ? <p className="font-semibold text-fail">{error}</p> : ""} */}
       </Dailog>

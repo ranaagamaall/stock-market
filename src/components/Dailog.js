@@ -24,7 +24,7 @@ function Dialog(props, ref) {
                 <div className="flex flex-col p-6">
                     {props.children}
                 </div>
-                <div className="flex items-center justify-end gap-4 p-6 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <div className="flex items-center justify-end gap-2 px-2 py-6 border-t border-gray-200 rounded-b min-w-max dark:border-gray-600">
                     {props.onSubmit ?
                         <button
                             onClick={() => props.onSubmit()}

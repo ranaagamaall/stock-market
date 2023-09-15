@@ -22,7 +22,7 @@ function SideBar(props) {
           {data.map((item, index) => (
             <li key={index}>
               <NavLink
-                end
+                end={index === 0}
                 to={item.link}
                 className={({ isActive }) => ["text-[1.3rem] font-main relative cursor-pointer flex gap-4 items-center my-6 ",
                   isActive
