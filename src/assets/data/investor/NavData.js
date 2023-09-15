@@ -8,8 +8,8 @@ const data = [
         link: "transactions",
     },
     {
-        title: "wallet",
-        link: "wallet",
+        title: "My Stocks",
+        link: "stocks",
     }
 ]
 
