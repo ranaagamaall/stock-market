@@ -73,7 +73,7 @@ function Home(props) {
                     onClick={() => {
                       navigate("/company/" + company.id);
                     }}
-                    className="px-4 py-2 font-semibold leading-tight rounded-lg text-s bg-success text-primary "
+                    className="px-4 py-2 font-semibold leading-tight rounded-lg text-s bg-accent text-primary "
                   >
                     Details
                   </button>

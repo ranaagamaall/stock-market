@@ -6,7 +6,7 @@ function StatCard(props) {
 
     return (
         <div
-            className="col-span-12 transition duration-300 transform rounded-lg shadow-xl hover:scale-105 sm:col-span-6 xl:col-span-3 intro-y bg-secondary"
+            className="col-span-12 transition duration-300 transform rounded-lg shadow-xl sm:col-span-6 xl:col-span-3 intro-y bg-secondary"
         >
             <div className="p-5">
                 <div className="flex justify-between">
