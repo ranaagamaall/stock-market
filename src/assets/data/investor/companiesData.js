@@ -14,6 +14,65 @@ const data = {
             stockValue: 1800,
             pic: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg',
             
+            summary: "software big tech",
+            description: "kalam kalam kalam",
+            stockValue: 1000,
+            pic: 'https://source.unsplash.com/random/200x200',
+            chartData:
+            {
+                title: "total transactions",
+                data: [
+                    {
+                        date: "Jan",
+                        number: 4000,
+                    },
+                    {
+                        date: "Feb",
+                        number: 3000,
+                    },
+                    {
+                        date: "Mar",
+                        number: 2000,
+                    },
+                    {
+                        date: "Apr",
+                        number: 2780,
+                    },
+                    {
+                        date: "May",
+                        number: 1890,
+                    },
+                    {
+                        date: "Jun",
+                        number: 2390,
+                    },
+                    {
+                        date: "Jul",
+                        number: 3490,
+                    },
+                    {
+                        date: "Aug",
+                        number: 4000,
+                    },
+                    {
+                        date: "Sep",
+                        number: 3000,
+                    },
+                    {
+                        date: "Oct",
+                        number: 2000,
+                    },
+                    {
+                        date: "Nov",
+                        number: 2780,
+                    },
+                    {
+                        date: "Dec",
+                        number: 1890,
+                    },
+                ]
+            },
+
         },
         {
             id: 2,
@@ -22,6 +81,65 @@ const data = {
             description: "Spotify is a Swedish audio streaming and media services provider founded on 23 April 2006 by Daniel Ek and Martin Lorentzon. It is one of the largest music streaming service providers, with over 551 million monthly active users,",
             stockValue: 700,
             pic: 'https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg',
+            summary: "software big tech",
+            description: "kalam kalam kalam",
+            stockValue: 1000,
+            pic: 'https://source.unsplash.com/random/200x200',
+
+            chartData:
+            {
+                title: "total transactions",
+                data: [
+                    {
+                        date: "Jan",
+                        number: 4000,
+                    },
+                    {
+                        date: "Feb",
+                        number: 3000,
+                    },
+                    {
+                        date: "Mar",
+                        number: 2000,
+                    },
+                    {
+                        date: "Apr",
+                        number: 2780,
+                    },
+                    {
+                        date: "May",
+                        number: 1890,
+                    },
+                    {
+                        date: "Jun",
+                        number: 2390,
+                    },
+                    {
+                        date: "Jul",
+                        number: 3490,
+                    },
+                    {
+                        date: "Aug",
+                        number: 4000,
+                    },
+                    {
+                        date: "Sep",
+                        number: 3000,
+                    },
+                    {
+                        date: "Oct",
+                        number: 2000,
+                    },
+                    {
+                        date: "Nov",
+                        number: 2780,
+                    },
+                    {
+                        date: "Dec",
+                        number: 1890,
+                    },
+                ]
+            },
         },
         {
             id: 3,

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import StatCard from "../../../components/StatCard";
-import reportData from "../../../assets/data/investor/report";
 import companiesData from "../../../assets/data/investor/companiesData";
 import Table from "../../../components/Table";
 import { useNavigate } from "react-router-dom";
@@ -30,7 +29,7 @@ function Home(props) {
         </div>
       </div>
       <div className="flex justify-between gap-8 h-fit translate-y-[-65%] px-14">
-        {reportData.map((data, index) => (
+        {props.user.reports.map((data, index) => (
           <div className="w-full max-w-[min(30vw,18rem)]" key={index}>
             <StatCard stat={data} />
           </div>
