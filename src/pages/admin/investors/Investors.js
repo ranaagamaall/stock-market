@@ -28,7 +28,7 @@ function Investors() {
 
         </div>
         <div className="flex-auto h-full px-0 pt-0 pb-2">
-          <div className="p-0 overflow-x-auto h-[80vh]">
+          <div className="p-0 overflow-x-auto h-[80vh] scrollbar">
             <Table columns={data.columns} rows={users.map((user) => {
               return (
                 <>
@@ -38,7 +38,7 @@ function Investors() {
                         <img src={user.pic} className="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" alt="user" />
                       </div>
                       <div className="flex flex-col justify-center">
-                        <h6 className="mb-0 text-sm leading-normal font-main capitalize">{user.name}</h6>
+                        <h6 className="mb-0 text-sm leading-normal capitalize font-main">{user.name}</h6>
                         <p className="mb-0 text-xs leading-tight text-slate-400 font-main" >{user.email}</p>
                       </div>
                     </div>
@@ -55,8 +55,7 @@ function Investors() {
                   </td>
                   <td className="p-2 align-middle border-b whitespace-nowrap shadow-transparent">
                     <button onClick={() => openInvestmentsModal(user.id)}
-                      className="px-4 py-2 font-semibold leading-tight rounded-lg text-s bg-success text-primary font-main">view</button>
-
+                      className="px-4 py-2 font-semibold leading-tight rounded-lg text-s bg-accent text-primary font-main">view</button>
                   </td>
                 </>
               )

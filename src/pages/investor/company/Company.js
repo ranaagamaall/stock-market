@@ -80,8 +80,8 @@ function Company(props) {
 
 
     return (
-        <div>
-            <div className="flex flex-wrap items-center w-full h-56 pt-10 justify-evenly">
+        <div className="flex flex-col gap-8 mt-16">
+            <div className="flex flex-wrap items-center w-full h-56 gap-4 px-8 mb-4 justify-evenly">
                 <h2 className="text-3xl font-bold text-center capitalize font-main text-text w-min">
                     {chosenCompany.name}
                 </h2>
@@ -115,19 +115,23 @@ function Company(props) {
                     yKey="number"
                 />
             </div>
-            <div className="grid grid-cols-2 ">
-                <div className="p-8">
-                    <h3 className="pb-4 text-2xl font-bold">Summary</h3>
+            <div className="flex flex-wrap ">
+                <div className="flex-1 p-8">
+                    <h3 className="pb-4 text-2xl font-bold min-w-[16rem]">Summary</h3>
                     <p>
                         {chosenCompany.description}
                     </p>
                 </div>
-                <div className="flex flex-wrap gap-4 px-8 py-24 text-primary">
-                    {chosenCompany.tags.map((item)=>(
-                    <p className= {`${item.positive ? "bg-success " : "bg-fail "} flex-1 px-4 rounded-lg h-fit w-max`}>{item.title}</p>
-                    ))
-                    }
-            
+                <div className="flex-1 p-8">
+                    <h3 className="text-2xl font-bold capitalize ">company statistics</h3>
+                    <div className="flex flex-wrap gap-4 py-8 text-primary">
+                        {chosenCompany.tags.map((item) => (
+                            <p className={`${item.positive ? "bg-success " : "bg-fail "} px-4 rounded-lg h-fit w-max`}>{item.title}</p>
+                        ))
+                        }
+
+                    </div>
+
                 </div>
             </div>
 
