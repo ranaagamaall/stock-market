@@ -13,11 +13,11 @@ function SideBar(props) {
           <h2 className="font-main font-bold text-[2rem] leading-8 flex gap-5 items-center ">
             <img src={brand} alt="brand" className="w-[2.5rem]"
             />
-            Stocker
+            <span className="hidden md:block">Stocker</span>
           </h2>
         </NavLink>
       </div>
-      <div className="ml-[3rem] mt-[5rem]">
+      <div className="ml-[1rem] md:ml-[3rem] mt-[5rem]">
         <ul className="mt-[2rem]">
           {data.map((item, index) => (
             <li key={index}>
@@ -26,12 +26,12 @@ function SideBar(props) {
                 to={item.link}
                 className={({ isActive }) => ["text-[1.3rem] font-main relative cursor-pointer flex gap-4 items-center my-6 ",
                   isActive
-                    ? "font-bold after:content-[''] after:w-2 after:h-[100%] after:bg-text after:absolute  after:left-[-3rem] after:rounded-r-[0.5rem]"
+                    ? "font-bold after:content-[''] after:w-2 after:h-[100%] after:bg-text after:absolute  after:left-[-1rem] md:after:left-[-3rem] after:rounded-r-[0.5rem]"
                     : ""
                 ].join(" ")}
               >
                 <img className="w-[2.5rem]" src={item.icon} alt="icon" />
-                {item.title}
+                <span className="hidden md:block">{item.title}</span>
               </NavLink>
             </li>
           ))}
