@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html{
-  @apply bg-primary
+  @apply bg-primary font-main
 }
 
 

@@ -88,11 +88,11 @@ function Company(props) {
 
 
     return (
-        <div className="flex flex-col gap-8 mt-16">
+        <div className="flex flex-col gap-8 mt-16 font-main">
             <div className="flex flex-wrap items-center w-full h-56 gap-4 px-8 mb-4 justify-evenly">
                 <h2 className="flex flex-col items-center gap-4 text-3xl font-bold text-center capitalize font-main text-text w-min">
                     {chosenCompany.name}
-                    <span className="px-4 text-xl font-medium rounded-md w-fit text-text bg-accent">
+                    <span className="px-4 text-xl font-semibold rounded-full w-fit text-primary bg-accent">
                         $ {chosenCompany.stockValue}
                     </span>
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StatCard from "../../../components/StatCard";
 import companiesData from "../../../assets/data/investor/companiesData";
 import Table from "../../../components/Table";
@@ -7,6 +7,13 @@ import { useNavigate } from "react-router-dom";
 function Home(props) {
   const navigate = useNavigate();
   const [companies, setCompanies] = useState(companiesData.companies);
+
+  useEffect(() => {
+    companiesData.companies.forEach((company) => {
+      company.stockValue = Math.floor(Math.random() * company.stockValue / 1.5 + company.stockValue / 2);
+    });
+    setCompanies(companiesData.companies);
+  }, []);
 
   return (
     <div className=" text-text">
@@ -41,8 +48,8 @@ function Home(props) {
           rows={companies.map((company) => {
             return (
               <>
-                <td className="flex justify-start   p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                  <div className="flex  px-2 py-1 w-1/2 mx-auto">
+                <td className="flex justify-start p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                  <div className="flex w-1/2 px-2 py-1 mx-auto">
                     <div>
                       <img
                         src={company.pic}
