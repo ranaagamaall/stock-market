@@ -5,6 +5,10 @@ import Dailog from "../../../components/Dailog";
 
 function Stocks() {
   const sellRef = useRef();
+  const sellAmmountRef = useRef();
+
+  const [sellAmmount, setSellAmmount] = useState(0);
+
   var groupBy = function (xs, key) {
     return xs.reduce(function (rv, x) {
       rv[x[key]] =
@@ -22,6 +26,7 @@ function Stocks() {
   }));
   console.log(result);
 
+  const tdataClass = "p-2 align-middle bg-transparent border-b text-center whitespace-nowrap shadow-transparent";
   return (
     <div className="">
       <Table
@@ -29,22 +34,22 @@ function Stocks() {
         rows={user.stocks.map((stock) => {
           return (
             <>
-              <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+              <td className={tdataClass}>
                 <p className="mb-0 font-medium leading-tight text-center text-s font-main opacity-80">
                   {stock.stock}
                 </p>
               </td>
-              <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+              <td className={tdataClass}>
                 <p className="mb-0 font-medium leading-tight text-center text-s font-main opacity-80">
                   {stock.amount}
                 </p>
               </td>
-              <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent flex justify-center gap-3">
+              <td className={tdataClass}>
                 <p className="mb-0 font-medium leading-tight text-s font-main opacity-80">
                   $ {stock.price}
                 </p>
               </td>
-              <td className="p-2 align-middle border-b whitespace-nowrap shadow-transparent">
+              <td className={tdataClass}>
                 <button
                   onClick={() => sellRef.current.showModal()}
                   className="px-4 py-2 font-semibold leading-tight rounded-lg text-s bg-success text-primary font-main"
@@ -65,10 +70,13 @@ function Stocks() {
       >
         <input
           type="number"
-          className="w-full p-2 border-2 rounded-lg outline-none border-primary text-primary"
+          ref={sellAmmountRef}
+          onChange={() => setSellAmmount(parseInt(sellAmmountRef.current.value))}
+          pattern="[0-9]{1,}"
+          className="w-full p-2 border-2 rounded-lg outline-none peer invalid:border-fail border-primary text-primary"
           placeholder="Enter amount of stocks"
         />
-        <p>pew pew</p>
+        {sellAmmount ? <p className="py-6 peer-invalid:hidden text-text">You will get <b className=" text-accent">$ {sellAmmount / 2}</b> for <b className="text-accent">{sellAmmount}</b> shares</p> : ""}
       </Dailog>
     </div>
   );
