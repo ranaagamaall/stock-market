@@ -57,11 +57,19 @@ function Company(props) {
     }
 
     function handleBuy(event) {
-        if (stockValueRef.current.value === "" || error) {
+        if (stockValueRef.current.value === "" || error !== "") {
             return;
         }
         props.user.currentBalance -= parseInt(stockValueRef.current.value) * chosenCompany.stockValue;
+
+        if (props.user.stocks.find(stock => stock.stock === chosenCompany.name)) {
+            props.user.stocks.find(stock => stock.stock === chosenCompany.name).ammount += parseInt(stockValueRef.current.value);
+        }
+        else
+            props.user.stocks.push({ stock: chosenCompany.name, amount: stocks, price: chosenCompany.stockValue })
+
         stockValueRef.current.value = "";
+        setStocks(0);
         buyRef.current.close();
         props.setReload((reload) => !reload);
     }

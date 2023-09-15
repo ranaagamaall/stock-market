@@ -35,6 +35,8 @@ function Stocks(props) {
     props.user.currentBalance += parseInt(sellAmmountRef.current.value) * props.user.stocks[companyToSell].price;
     props.user.stocks[companyToSell].amount -= parseInt(sellAmmountRef.current.value);
     sellAmmountRef.current.value = "";
+    props.user.stocks = props.user.stocks.filter(stock => stock.amount > 0);
+    setCompanyToSell(0);
     sellRef.current.close();
     props.setReload((reload) => !reload);
   }
