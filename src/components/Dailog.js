@@ -4,7 +4,7 @@ import React from "react";
 function Dialog(props, ref) {
 
     return (
-        <dialog ref={ref} className={`${props.className ? props.className : ""} my-auto bg-transparent text-text`}>
+        <dialog ref={ref} className={`${props.className ? props.className : ""} my-auto bg-transparent text-text fixed inset-0 backdrop:bg-black backdrop:opacity-70`}>
             <div className="w-3/5 m-auto bg-primary rounded-2xl">
                 <div className="flex items-start justify-between p-4 border-b rounded-t">
                     <div className="flex px-2 py-1">
