@@ -50,6 +50,11 @@ const user = {
       date: "2021-05-04",
     },
   ],
+  stocks: [
+    { stock: "Samsung", amount: 100, price: 900 },
+    { stock: "AAPL", amount: 100, price: 900 },
+    { stock: "Figma", amount: 100, price: 900 },
+  ],
 };
 
 export default user;

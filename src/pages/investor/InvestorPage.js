@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import HomeNavbar from "../../layouts/HomeNavbar/HomeNavbar";
 import Home from "./home/Home";
 import Company from "./company/Company";
+import Stocks from "./stocks/Stocks";
 import user from "../../assets/data/investor/user";
 import Transactions from "./transactions/Transactions";
 import { useEffect } from "react";
@@ -18,6 +19,7 @@ function Investor() {
             <Route path="" element={<Home user={user} />} />
             <Route path="/company/:id" element={<Company />} />
             <Route path="/transactions" element={<Transactions />} />
+            <Route path="/stocks" element={<Stocks />} />
           </Routes>
         </main>
       </div>
