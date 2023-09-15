@@ -6,9 +6,9 @@ function StatCard(props) {
 
     return (
         <div
-            className="col-span-12 transition duration-300 transform rounded-lg shadow-xl sm:col-span-6 xl:col-span-3 intro-y bg-secondary"
+            className="flex-1 min-w-[15rem] rounded-lg shadow-xl bg-secondary"
         >
-            <div className="p-5">
+            <div className="px-1 py-5 md:p-5">
                 <div className="flex justify-between">
                     <img src={props.stat.icon} alt='icon' className="w-[2.5rem]" />
                     <div className={`${getPercentage(props.stat.number) > 0 ? "bg-success" : "bg-fail"} w-max rounded-full h-6 px-2 flex justify-items-center text-primary font-main font-semibold text-sm`}>

@@ -18,10 +18,10 @@ function Admin() {
   return (
     <div className="bg-primary min-w-[80vw] min-h-[100vh] text-text flex">
       <div className="flex w-full">
-        <div className="min-h-full  w-[13%] md:w-[20%] min-w-fit">
+        <div className="min-h-full  w-[15%] md:w-[20%] min-w-fit">
           <SideBar />
         </div>
-        <main className="w-[80%] flex flex-col justify-evenly p-8 gap-4">
+        <main className="w-[85%] md:[80%] flex flex-col justify-evenly overflow-y-auto px-2 py-8 md:p-8 gap-4">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/investors" element={<Investors />} />
