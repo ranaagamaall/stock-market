@@ -123,19 +123,11 @@ function Company(props) {
                     </p>
                 </div>
                 <div className="flex flex-wrap gap-4 px-8 py-24 text-primary">
-                    <p className="flex-1 px-4 text-center rounded-lg h-fit bg-success w-max">
-                        100%
-                    </p>
-                    <p className="flex-1 px-4 text-center rounded-lg h-fit bg-success min-w-max">
-                        Best Company 2022
-                    </p>
-                    <p className="flex-1 px-4 rounded-lg h-fit bg-success w-max">100%</p>
-                    <p className="flex-1 px-4 rounded-lg h-fit bg-success w-max">100%</p>
-                    <p className="flex-1 px-4 rounded-lg h-fit bg-fail w-max">-100%</p>
-                    <p className="flex-1 px-4 rounded-lg h-fit bg-success w-max">-100%</p>
-                    <p className="flex-1 px-4 rounded-lg h-fit bg-success w-max">100%</p>
-                    <p className="flex-1 px-4 rounded-lg h-fit bg-fail w-max">100%</p>
-                    <p className="flex-1 px-4 rounded-lg h-fit bg-success w-max">100%</p>
+                    {chosenCompany.tags.map((item)=>(
+                    <p className= {`${item.positive ? "bg-success " : "bg-fail "} flex-1 px-4 rounded-lg h-fit w-max`}>{item.title}</p>
+                    ))
+                    }
+            
                 </div>
             </div>
 
