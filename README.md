@@ -11,24 +11,36 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-## Admin:
+## Admin Functionalities:
+1. Home Page (dashboard):
+- view users and companies statistics
 
-1. Add stocks for new companies (take price, start date?)
-   - form:
-	
-1. view all investors and select investor to reveiew tarns history
-    - page all investors list with search.
-    - investor details.
+2. Stocks Page:
+- Add stocks for new companies and specify their initial price 
 
-2. Stats
-    - dashboard
-        1. number of investors.
-        2. number of transactions with time.
-        3. amount of money transfered over time.
+3. Investors Page:
+- view all investors details
+- search by investor name
+- view investor transactions log 
 
-## Investor:
 
-1. view all companies.
-2. veiw company details (graph, price, buying/selling modal).
-3. deposit funds to wallet.
-4. view stats of prev tansactions.
+## Investor View:
+
+1. Home Page:
+- view account statistics.
+- search by company name
+- view all companies.
+
+2. Company Page:
+- view company graphs, description, statistics
+- control company graph window
+- purchase stocks ()
+
+3. Stocks Page:
+- view previously owned and newly purchased stocks grouped by company name
+- sell from available stocks
+
+4. Transactions Page:
+- view all previous transactions details
+
+5. Add Funds to wallet 
