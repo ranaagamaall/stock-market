@@ -7,9 +7,7 @@ import Dailog from "../../components/Dailog";
 function HomeNavbar(props) {
   const pic = "https://source.unsplash.com/random/200x200";
   const addFundsRef = useRef(null);
-  const [error, setError] = useState("");
   const rechargeMoneyRef = useRef(null);
-  const [reload, setReload] = useState(false);
 
   function handleAddFunds() {
     if (rechargeMoneyRef.current.value === "" || parseInt(rechargeMoneyRef.current.value) <= 0) {
@@ -18,15 +16,8 @@ function HomeNavbar(props) {
     props.user.currentBalance += parseInt(rechargeMoneyRef.current.value);
     rechargeMoneyRef.current.value = "";
     addFundsRef.current.close();
-    setReload(!reload);
+    props.setReload((reload) => !reload);
   }
-
-  // function handleFundsChange(event) {
-  //   if (parseInt(rechargeMoneyRef.current.value) <= 0) {
-  //     setError("Enter a valid amount");
-  //   } else
-  //     setError("");
-  // }
 
   return (
     <div className="pb-4 shadow-lg bg-primary px-14 font-main ">
