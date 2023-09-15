@@ -1,9 +1,5 @@
 const data = [
     {
-        title: "Dashboard",
-        link: "dashboard",
-    },
-    {
         title: "transactions",
         link: "transactions",
     },

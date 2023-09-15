@@ -42,8 +42,8 @@ function Home(props) {
           rows={companies.map((company) => {
             return (
               <>
-                <td className="flex justify-center p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                  <div className="flex px-2 py-1">
+                <td className="flex justify-start   p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                  <div className="flex  px-2 py-1 w-1/2 mx-auto">
                     <div>
                       <img
                         src={company.pic}

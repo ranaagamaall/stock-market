@@ -38,7 +38,7 @@ function Investors() {
                         <img src={user.pic} className="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" alt="user" />
                       </div>
                       <div className="flex flex-col justify-center">
-                        <h6 className="mb-0 text-sm leading-normal font-main">{user.name}</h6>
+                        <h6 className="mb-0 text-sm leading-normal font-main capitalize">{user.name}</h6>
                         <p className="mb-0 text-xs leading-tight text-slate-400 font-main" >{user.email}</p>
                       </div>
                     </div>
