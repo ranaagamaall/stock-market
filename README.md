@@ -45,7 +45,7 @@ You may also see any lint errors in the console.
 
 5. Add Funds to wallet 
 
-##implemented functionalities:
+## Implemented Functionalities:
 1. dashboard percentage change values are calculated from a history of logs and dynamically rendered according to increase or decrease result
 2. validations on all form fields are applied 
 3. when stocks are purchased/sold they get reflected in user's stocks log
