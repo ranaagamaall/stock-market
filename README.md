@@ -44,3 +44,9 @@ You may also see any lint errors in the console.
 - view all previous transactions details
 
 5. Add Funds to wallet 
+
+##implemented functionalities:
+1. dashboard percentage change values are calculated from a history of logs and dynamically rendered according to increase or decrease result
+2. validations on all form fields are applied 
+3. when stocks are purchased/sold they get reflected in user's stocks log
+4. transactions dynamically show whether it was a sell or buy transaction according to incoming data(arrows are not arbitarily rendered)
