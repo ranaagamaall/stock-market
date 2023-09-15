@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import data from "../../assets/data/investor/NavData";
 import brand from "../../assets/icons/brand.svg";
+import Dailog from "../../components/Dailog";
 
 function HomeNavbar(props) {
   const pic = "https://source.unsplash.com/random/200x200";
+  const addFundsRef = useRef(null);
 
   return (
-    <div className="shadow-lg bg-primary px-14 pb-4 font-main ">
+    <div className="pb-4 shadow-lg bg-primary px-14 font-main ">
       <div className="flex w-full ">
         <div className="flex items-center justify-between w-full ">
           <NavLink to="/">
@@ -37,7 +39,8 @@ function HomeNavbar(props) {
           </ul>
 
           <div className="flex items-center gap-4 text-primary">
-            <button className="px-3 text-lg font-medium capitalize bg-accent rounded-3xl">
+            <button onClick={() => addFundsRef.current.showModal()}
+              className="px-3 text-lg font-medium capitalize bg-accent rounded-3xl">
               + Add funds
             </button>
             <h4 className="px-3 text-lg font-medium bg-success rounded-3xl ">
@@ -51,7 +54,11 @@ function HomeNavbar(props) {
           </div>
         </div>
       </div>
-      
+      <Dailog ref={addFundsRef} name="Recharge your wallet" className="mt-[10%] w-1/2" onSubmit={() => console.log("as")} submitText="Recharge">
+        <input type="number" className="w-full p-2 border-2 rounded-lg outline-none border-primary text-primary" placeholder="Enter amount" />
+
+      </Dailog>
+
     </div>
   );
 }
