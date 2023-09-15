@@ -131,7 +131,7 @@ function Company() {
                     invest now
                 </button>
             </div>
-            <Dailog ref={buyRef} name="Purchase stocks" className="mt-[10%] w-fit" onSubmit={() => console.log("as")} submitText="Purchase">
+            <Dailog ref={buyRef} name="Purchase stocks" className="mt-[10%] w-1/2" onSubmit={() => console.log("as")} submitText="Purchase">
                 <input type="number" className="w-full p-2 border-2 rounded-lg outline-none border-primary text-primary" onChange={(e) => setMoney(parseInt(e.target.value))} placeholder="Enter amount in USD" />
                 {money ? <p className="py-6 text-text">You will get <b className=" text-accent">{money * 2}</b> shares for <b className="text-accent">$ {money}</b></p> : ""}
             </Dailog>

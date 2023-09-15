@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import StatCard from "../../../components/StatCard";
 import reportData from "../../../assets/data/investor/report";
 import companiesData from "../../../assets/data/investor/companiesData";
@@ -6,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 function Home(props) {
   const navigate = useNavigate();
-  const companies = companiesData.companies;
+  const [companies, setCompanies] = useState(companiesData.companies);
+
   return (
     <div className=" text-text ">
       <div className="flex bg-primary items-center justify-between pb-36 px-14">
@@ -23,7 +25,7 @@ function Home(props) {
             type="search"
             className="relative m-0 -mr-0.5 block min-w-0 flex-auto rounded border border-solid border-text bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-text outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-text focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none"
             placeholder="Search Companies"
-            onChange={(e) => {}}
+            onChange={(e) => console.log(companiesData.companies.filter(company => company.name.toLowerCase().includes(e.target.value.toLowerCase())))}
           />
         </div>
       </div>

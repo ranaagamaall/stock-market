@@ -21,7 +21,7 @@ const data = [{
     'link': '/admin/',
 },
 {
-    'title': 'Total Balance',
+    'title': 'Total Gain',
     'icon': investements,
     'number': [
         1000,
