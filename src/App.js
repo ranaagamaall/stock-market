@@ -9,7 +9,7 @@ function App() {
         <Routes>
 
           <Route path="/admin/*" element={<Admin />} />
-          <Route path="/home/*" element={<Investor />} />
+          <Route path="/*" element={<Investor />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
 
         </Routes>

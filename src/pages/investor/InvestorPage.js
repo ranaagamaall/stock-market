@@ -3,16 +3,19 @@ import { Routes, Route } from "react-router-dom";
 import HomeNavbar from "../../layouts/HomeNavbar/HomeNavbar";
 import Home from "./home/Home";
 import Company from "./company/Company";
+import user from "../../assets/data/investor/user";
+import Transactions from "./transactions/Transactions";
 
 function Investor() {
   return (
     <div className="bg-secondary inset-x-0 min-h-[100vh] text-text flex">
       <div className="w-full">
-        <HomeNavbar />
-        <main className="flex flex-col w-full gap-4 px-14 py-8 justify-evenly">
+        <HomeNavbar user={user}/>
+        <main className="flex flex-col w-full gap-4  justify-evenly">
           <Routes>
-            <Route path="" element={<Home />} />
+            <Route path="" element={<Home user={user}/>} />
             <Route path="/company/:id" element={<Company />} />
+            <Route path="/transactions" element={<Transactions />} />
           </Routes>
         </main>
       </div>

@@ -20,7 +20,7 @@ function Investors() {
         <div className="relative flex flex-wrap items-stretch w-1/2 mx-auto mt-2">
           <input
             type="search"
-            className="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-text bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-text outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-text focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none"
+            className="relative m-0 mb-6 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-text bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-text outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-text focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none"
             placeholder="Search"
             onChange={(e) => { setUsers(data.users.filter(user => user.name.toLowerCase().includes(e.target.value.toLowerCase()))) }}
           />
@@ -82,8 +82,8 @@ function Investors() {
           </div>
           <div className="flex flex-col p-6">
             {
-              userToInspect.investments &&
-              <Table columns={['Stock', 'Amount', 'Price', 'Date']} rows={userToInspect.investments.map((investment) => {
+              userToInspect.transactions &&
+              <Table columns={['Stock', 'Amount', 'Price', 'Date']} rows={userToInspect.transactions.map((investment) => {
                 return (
                   <>
                     <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
@@ -93,7 +93,7 @@ function Investors() {
                       <p className="mb-0 font-medium leading-tight text-center text-s font-main opacity-80">{investment.amount}</p>
                     </td>
                     <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                      <p className="mb-0 font-medium leading-tight text-center text-s font-main opacity-80">{investment.price}</p>
+                      <p className="mb-0 font-medium leading-tight text-center text-s font-main opacity-80">$ {investment.price}</p>
                     </td>
                     <td className="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                       <p className="mb-0 font-medium leading-tight text-center text-s font-main opacity-80">{investment.date}</p>
