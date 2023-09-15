@@ -34,7 +34,7 @@ You may also see any lint errors in the console.
 2. Company Page:
 - view company graphs, description, statistics
 - control company graph window
-- purchase stocks ()
+- purchase stocks
 
 3. Stocks Page:
 - view previously owned and newly purchased stocks grouped by company name
