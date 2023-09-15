@@ -1,7 +1,7 @@
 import Chart from "../../../components/Chart";
 
 import companiesData from "../../../assets/data/investor/companiesData";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import Dailog from "../../../components/Dailog";
 
@@ -112,6 +112,7 @@ function Company(props) {
                     ref={toRef}
                     onChange={toOnChange}
                     className=" [&>*]:text-primary   rounded-lg border outline-none bg-transparent px-3 py-1 "
+                    defaultValue={11}
                 >
                     {selectOptions.map((option, index) => (
                         <option key={index} value={option}>
@@ -137,8 +138,8 @@ function Company(props) {
                 <div className="flex-1 p-8">
                     <h3 className="text-2xl font-bold capitalize ">company statistics</h3>
                     <div className="flex flex-wrap gap-4 py-8 text-primary">
-                        {chosenCompany.tags.map((item) => (
-                            <p className={`${item.positive ? "bg-success " : "bg-fail "} px-4 rounded-lg h-fit w-max`}>{item.title}</p>
+                        {chosenCompany.tags.map((item, index) => (
+                            <p key={index} className={`${item.positive ? "bg-success " : "bg-fail "} px-4 rounded-lg h-fit w-max`}>{item.title}</p>
                         ))
                         }
 
