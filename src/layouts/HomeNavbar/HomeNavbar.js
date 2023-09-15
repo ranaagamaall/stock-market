@@ -21,12 +21,12 @@ function HomeNavbar(props) {
     setReload(!reload);
   }
 
-  function handleFundsChange(event) {
-    if (parseInt(rechargeMoneyRef.current.value) <= 0) {
-      setError("Enter a valid amount");
-    } else
-      setError("");
-  }
+  // function handleFundsChange(event) {
+  //   if (parseInt(rechargeMoneyRef.current.value) <= 0) {
+  //     setError("Enter a valid amount");
+  //   } else
+  //     setError("");
+  // }
 
   return (
     <div className="pb-4 shadow-lg bg-primary px-14 font-main ">
@@ -75,8 +75,8 @@ function HomeNavbar(props) {
         </div>
       </div>
       <Dailog ref={addFundsRef} name="Recharge your wallet" className="mt-[10%] w-1/2" onSubmit={handleAddFunds} submitText="Recharge">
-        <input type="number" onChange={handleFundsChange} ref={rechargeMoneyRef} onKeyUp={(e) => { if (e.code === 'Enter') handleAddFunds() }} className="w-full p-2 border-2 rounded-lg outline-none border-primary text-primary" placeholder="Enter amount" />
-        {error ? <p className="font-semibold text-fail">{error}</p> : ""}
+        <input type="number" pattern="[0-9]" ref={rechargeMoneyRef} onKeyUp={(e) => { if (e.code === 'Enter') handleAddFunds() }} className="w-full p-2 border-2 rounded-lg outline-none border-primary text-primary invalid:border-fail " placeholder="Enter amount" />
+        {/* {error ? <p className="font-semibold text-fail">{error}</p> : ""} */}
       </Dailog>
     </div>
   );
